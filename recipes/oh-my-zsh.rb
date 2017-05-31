@@ -6,7 +6,8 @@
 
 include_recipe 'zsh'
 
-user_id = ENV['SUDO_USER']
+require 'etc'
+user_id = Etc.getlogin
 
 bash 'install-oh-my-zsh' do
   code <<-EOH
@@ -23,7 +24,6 @@ git "/Users/#{user_id}/.oh-my-zsh/custom/plugins/zsh-completions" do
   repository 'https://github.com/zsh-users/zsh-completions'
   reference 'master'
   user user_id
-  group user_id
   action :checkout
   not_if "test -d /Users/#{user_id}/.oh-my-zsh/custom/plugins/zsh-completions"
   only_if { ::File.exist?("/Users/#{user_id}/.oh-my-zsh") }
@@ -33,7 +33,6 @@ git "/Users/#{user_id}/.oh-my-zsh/custom/plugins/zsh-autosuggestions" do
   repository 'https://github.com/zsh-users/zsh-autosuggestions'
   reference 'master'
   user user_id
-  group user_id
   action :checkout
   not_if "test -d /Users/#{user_id}" \
     '/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
