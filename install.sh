@@ -12,9 +12,11 @@ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
 # Homebrew
 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap caskroom/cask
-brew untap caskroom/cask
+if ! command -v brew; then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  brew tap caskroom/cask
+  brew untap caskroom/cask
+fi
 
 # Chef
 
