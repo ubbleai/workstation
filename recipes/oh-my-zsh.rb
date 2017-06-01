@@ -12,7 +12,7 @@ user_id = Etc.getlogin
 bash 'install-oh-my-zsh' do
   code <<-EOH
   sudo chsh -s /bin/zsh #{user_id}
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  SHELL=zsh sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   EOH
   user user_id
   not_if "test -d /Users/#{user_id}/.oh-my-zsh"
