@@ -6,6 +6,6 @@
 
 include_recipe 'nodejs'
 
-nodejs_npm 'yo'
+# nodejs_npm 'yo'
 nodejs_npm 'npm-check-updates'
 nodejs_npm 'react-native-cli'
