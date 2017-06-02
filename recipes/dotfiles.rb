@@ -56,7 +56,7 @@ Dir.glob(files_path.to_s + '/**/*', File::FNM_DOTMATCH).each do |f|
   FileUtils.mv(new_path.to_s, new_path.to_s + '.bak') \
           if File.exist?(new_path.to_s)
   template new_path.to_s do
-    source relative_path.to_s + '.erb'
+    source 'dotfiles/' + relative_path.to_s + '.erb'
     variables variables
   end
 end
