@@ -21,3 +21,7 @@ export ANDROID_NDK_HOME=/usr/local/opt/android-ndk
 
 # Private env vars
 . ~/.zshenv-private
+
+# Google cloud sdk
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
