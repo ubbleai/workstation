@@ -4,8 +4,8 @@ set ruler               " Show the line and column numbers of the cursor.
 set showcmd             " Show (partial) command in status line.
 set showmatch           " Show matching brackets.
 set expandtab           " Insert spaces when TAB is pressed.
-" set tabstop=2           " Render TABs using this many spaces.
-" set shiftwidth=2        " Indentation amount for < and > commands.<Paste>
+set tabstop=2           " Render TABs using this many spaces.
+set shiftwidth=2        " Indentation amount for < and > commands.<Paste>
 set linespace=0         " Set line-spacing to minimum.
 set nojoinspaces        " Prevents inserting two spaces after punctuation on a join (J)
 " More natural splits
@@ -80,6 +80,14 @@ Plug 'zchee/deoplete-jedi'
 
 " python pep8 indent
 Plug 'hynek/vim-python-pep8-indent', { 'for': 'python' }
+
+" ruby
+" Make sure you use single quotes
+function! DoRemote(arg)
+  UpdateRemotePlugins
+endfunction
+Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
+Plug 'fishbullet/deoplete-ruby'
 
 " vim-go for cool go stuff
 Plug 'fatih/vim-go', { 'for': 'go' }
