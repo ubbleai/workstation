@@ -28,3 +28,10 @@ bash 'vagrant-cachier' do
   EOF
   not_if 'vagrant plugin list | grep -q vagrant-cachier'
 end
+
+bash 'vagrant-scp' do
+  code <<-EOF
+  vagrant plugin install vagrant-scp
+  EOF
+  not_if 'vagrant plugin list | grep -q vagrant-scp'
+end

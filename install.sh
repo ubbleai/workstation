@@ -6,6 +6,10 @@ echo "%staff ALL = (ALL) NOPASSWD: ALL" > /tmp/passwordless_sudo
 sudo chown 0 /tmp/passwordless_sudo
 sudo mv /tmp/passwordless_sudo /etc/sudoers.d/
 
+# software updates
+
+sudo softwareupdate -i -a
+
 # Locate database
 
 sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
