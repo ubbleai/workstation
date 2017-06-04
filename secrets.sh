@@ -9,6 +9,7 @@ secrets=(
   ".ssh"
   ".netrc"
   ".zshenv-private"
+  ".gitconfig"
 )
 
 
