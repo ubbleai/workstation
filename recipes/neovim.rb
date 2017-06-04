@@ -6,7 +6,7 @@
 
 include_recipe 'workstation::python'
 
-bash 'install-neovim2-python' do
+bash 'install-neovim-python' do
   code <<-EOH
   PYTHON2_VERSION=$(pyenv install --list | grep "^  2" | tail -1)
   PYTHON3_VERSION=$(pyenv install --list | grep "^  3" | tail -1)

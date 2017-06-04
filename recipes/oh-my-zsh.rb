@@ -9,6 +9,19 @@ include_recipe 'zsh'
 require 'etc'
 user_id = Etc.getlogin
 
+bash 'install-custom-fonts' do
+  code <<-EOH
+  cd /tmp
+  rm -rf fonts
+  git clone https://github.com/powerline/fonts.git
+  cd fonts
+  ./install.sh
+  cd ..
+  rm -rf fonts
+  EOH
+  not_if "ls ~/Library/Fonts | grep -q \"Meslo LG S Regular for Powerline.ttf\""
+end
+
 bash 'install-oh-my-zsh' do
   code <<-EOH
   sudo chsh -s /bin/zsh #{user_id}
