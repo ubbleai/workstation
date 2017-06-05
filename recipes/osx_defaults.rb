@@ -82,3 +82,18 @@ mac_os_x_userdefaults 'dock magnification' do
   key 'magnification'
   value true
 end
+
+mac_os_x_userdefaults 'Open Home when opening a new window in finder 1' do
+  domain 'com.apple.finder.plist'
+  key 'NewWindowTarget'
+  value 'PfHm'
+end
+
+require 'etc'
+current_user = Etc.getlogin
+
+mac_os_x_userdefaults 'Open Home when opening a new window in finder 2' do
+  domain 'com.apple.finder.plist'
+  key 'NewWindowTargetPath'
+  value "file:///Users/#{current_user}/"
+end
