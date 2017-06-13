@@ -28,6 +28,8 @@ brew cask install chefdk
 
 # Workstation
 
+CUR=$PWD
+
 cd /tmp/
 rm -rf workstation
 git clone https://github.com/gobadiah/workstation
@@ -36,4 +38,11 @@ berks install
 rm -rf ../cookbooks
 berks vendor ../cookbooks
 cd ..
-chef-client -z -l info -o 'recipe[workstation]'
+if [ -e $CUR/run_list.json ]
+then
+  chef-client -z -l info -j $CUR/run_list.json
+else
+  chef-client -z -l info -o 'recipe[workstation]'
+fi
+
+cd $CUR

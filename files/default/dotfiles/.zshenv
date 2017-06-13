@@ -13,7 +13,7 @@ export PATH=$PATH:/opt/homebrew-cask/Caskroom/google-cloud-sdk/latest/google-clo
 
 # Golang
 export GOPATH=~/workspace
-export PATH=~/workspace/bin:$PATH
+export PATH=$PATH:$GOPATH/bin
 
 # Android
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
