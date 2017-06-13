@@ -6,9 +6,9 @@
 
 package 'go'
 
-bash 'install gvm' do
-  code <<-EOH
-  zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
-  EOH
-  not_if '[ -d ~/.gvm ]'
-end
+# bash 'install gvm' do
+#   code <<-EOH
+#   zsh < <(curl -s -S -L https://raw.githubusercontent.com/moovweb/gvm/master/binscripts/gvm-installer)
+#   EOH
+#   not_if '[ -d ~/.gvm ]'
+# end
