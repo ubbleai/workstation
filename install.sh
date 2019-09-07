@@ -28,6 +28,12 @@ fi
 
 brew cask install chef/chef/chefdk
 
+# lastpass
+
+# fixing permissions
+sudo chown -R $USER:admin /usr/local/lib
+brew install lastpass-cli
+
 # Workstation
 
 [ -d $HOME/.dotfiles ] || git clone https://github.com/gobadiah/workstation
