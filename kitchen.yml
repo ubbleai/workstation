@@ -25,8 +25,10 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-18.04
-  - name: centos-7
+  - name: gobadiah/macos-mojave
+    driver:
+      vagrantfiles:
+        - .vagrant.rb
 
 suites:
   - name: default
