@@ -14,7 +14,8 @@ endif
 
 set ignorecase                              " with following line ignore case when lowercasing, don't if uppercase are present
 set smartcase
-set number                                  " display line number
+set number relativenumber                   " hybrid line numbers
+set nu rnu
 
 set conceallevel=1                          " only one character for concealed text
 
@@ -33,6 +34,16 @@ let g:python3_host_prog="~/.pyenv/versions/neovim3/bin/python"
 
 " plugins
 call plug#begin('~/.local/share/nvim/plugged')
+Plug 'godlygeek/tabular'
+Plug 'scrooloose/nerdtree'
+Plug 'mhinz/vim-startify'
+Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+    \ }
+Plug 'tpope/vim-fugitive'
+Plug 'itchyny/lightline.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 " end plugins
 
@@ -43,3 +54,16 @@ set foldlevel=99
 " mouse
 set mouse=a                                 " Automatically enable mouse usage
 set mousehide                               " Hide the mouse cursor while typing
+
+" nerdtree
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+map <C-n> :NERDTreeToggle<CR>
+" exit nvim if NERDTree is the last window
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" open NERDTree when opening a directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+
+" leader key
+let mapleader=","

@@ -27,6 +27,8 @@ verifier:
 platforms:
   - name: gobadiah/macos-mojave
     driver:
+      username: vagrant
+      password: vagrant
       vagrantfiles:
         - .vagrant.rb
 
