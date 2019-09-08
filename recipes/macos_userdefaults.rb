@@ -27,6 +27,7 @@ bash 'some more tap to click' do
   defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
   defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
   EOH
+  not_if "defaults read NSGlobalDomain com.apple.mouse.tapBehavior | grep -q 1"
 end
 
 macos_userdefaults 'automatically quit printer app when finished' do

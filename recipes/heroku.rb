@@ -16,4 +16,10 @@
 # end
 
 
-package 'heroku-toolbelt'
+homebrew_tap "heroku/brew"
+
+package 'heroku'
+
+homebrew_tap "heroku/brew" do
+  action :untap
+end

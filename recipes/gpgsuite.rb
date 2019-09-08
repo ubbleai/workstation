@@ -5,4 +5,4 @@
 # Copyright (c) 2016 Michaël Journo, All Rights Reserved.
 
 
-homebrew_cask 'gpgtools'
+homebrew_cask 'gpg-suite-no-mail'

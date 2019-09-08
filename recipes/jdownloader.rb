@@ -1,10 +1,10 @@
 #
-# Cookbook Name:: workstation
+# Cookbook Name:: dotfiles
 # Recipe:: jdownloader
 #
-# Copyright (c) 2016 The Authors, All Rights Reserved.
+# Copyright (c) 2019 The Authors, All Rights Reserved.
 
 
-include_recipe 'workstation::java'
+include_recipe 'dotfiles::java'
 
 homebrew_cask 'jdownloader'
