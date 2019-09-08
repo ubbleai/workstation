@@ -8,28 +8,11 @@ package 'chruby'
 
 package 'ruby-install'
 
-include_recipe 'workstation::gcc'
+include_recipe 'dotfiles::gcc'
 
-bash 'install-ruby-2.1' do
-  user ENV['SUDO_USER']
+bash 'install-ruby-2.6.4' do
   code <<-EOH
-  ruby-install ruby 2.1
+  ruby-install ruby 2.6.4
   EOH
-  not_if 'ls ~/.rubies | grep -q 2.1'
-end
-
-bash 'install-ruby-2.2.2' do
-  user ENV['SUDO_USER']
-  code <<-EOH
-  ruby-install ruby 2.2.2
-  EOH
-  not_if 'ls ~/.rubies | grep -q 2.2.2'
-end
-
-bash 'install-ruby-2.3' do
-  user ENV['SUDO_USER']
-  code <<-EOH
-  ruby-install ruby 2.3
-  EOH
-  not_if 'ls ~/.rubies | grep -q 2.3'
+  not_if 'ls ~/.rubies | grep -q 2.6.4'
 end

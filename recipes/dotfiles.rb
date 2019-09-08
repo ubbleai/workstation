@@ -10,6 +10,13 @@ require 'fileutils'
 
 files_path = Pathname.new(Dir.home + '/.dotfiles/files/default/dotfiles')
 
+git "#{Dir.home}/.dotfiles" do
+  repository "https://github.com/gobadiah/workstation"
+  reference "mojave"
+  action :checkout
+  not_if "test -d #{Dir.home}/.dotfiles"
+end
+
 Dir.glob(files_path.to_s + '/**/*', File::FNM_DOTMATCH).each do |f|
   absolute_path = Pathname.new(f)
   is_directory = File.directory?(f)

@@ -4,7 +4,9 @@
 #
 # Copyright (c) 2016 The Authors, All Rights Reserved.
 
+include_recipe 'nodejs'
 include_recipe 'dotfiles::python'
+include_recipe 'dotfiles::dotfiles'
 
 bash 'install-neovim-python' do
   code <<-EOH
@@ -21,3 +23,20 @@ bash 'install-neovim-python' do
 end
 
 package 'neovim'
+
+nodejs_npm 'neovim'
+
+bash 'install ruby neovim plugin' do
+  code <<-EOH
+  sudo gem install neovim
+  EOH
+  not_if "gem list | grep -q neovim"
+end
+
+bash 'install vim-plug' do
+  code <<-EOH
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  EOH
+  not_if "[ -f ~/.local/share/nvim/site/autoload/plug.vim ]"
+end

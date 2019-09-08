@@ -20,3 +20,5 @@ chef_version '>= 14.0'
 # source_url 'https://github.com/<insert_org_here>/dotfiles'
 
 depends 'homebrew', '~> 5.0.8'
+depends 'nodejs', '~> 6.0.0'
+depends 'build-essential', '~> 8.2.1'

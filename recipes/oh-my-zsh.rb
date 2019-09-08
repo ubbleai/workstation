@@ -47,3 +47,12 @@ git "#{Dir.home}/.oh-my-zsh/custom/plugins/zsh-autosuggestions" do
     '/.oh-my-zsh/custom/plugins/zsh-autosuggestions'
   only_if { ::File.exist?("#{Dir.home}/.oh-my-zsh") }
 end
+
+git "#{Dir.home}/.oh-my-zsh/custom/themes/powerlevel9k" do
+  repository 'https://github.com/bhilburn/powerlevel9k.git'
+  reference 'master'
+  action :checkout
+  not_if "test -d #{Dir.home}" \
+    '/.oh-my-zsh/custom/themes/powerlevel9k'
+  only_if { ::File.exist?("#{Dir.home}/.oh-my-zsh") }
+end 
