@@ -1,4 +1,4 @@
-set spell spelllang=en_us                   " spelling in English
+" set spell spelllang=en_us                   " spelling in English
 set undofile                                " ??
 set undodir=~/.config/nvim/undodir
 set encoding=utf-8                          " encoding
@@ -43,7 +43,10 @@ Plug 'wincent/command-t', {
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
+
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+Plug 'ambv/black'
 call plug#end()
 " end plugins
 
@@ -67,3 +70,14 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " leader key
 let mapleader=","
+
+" disable arrow key in normal mode
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+" move between tabs
+nnoremap <silent> È :wincmd k<CR>
+nnoremap <silent> Ï :wincmd j<CR>
+nnoremap <silent> Ì :wincmd h<CR>
+nnoremap <silent> ¬ :wincmd l<CR>

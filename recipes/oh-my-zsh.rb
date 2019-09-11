@@ -30,6 +30,7 @@ bash 'install-oh-my-zsh' do
 end
 
 package 'direnv'
+package 'autojump'
 
 git "/Users/#{user_id}/.oh-my-zsh/custom/plugins/zsh-completions" do
   repository 'https://github.com/zsh-users/zsh-completions'
@@ -63,4 +64,12 @@ git "#{Dir.home}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting" do
   action :checkout
   not_if "test -d #{Dir.home}" \
     '/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting'
+end
+
+git "#{Dir.home}/.oh-my-zsh/custom/plugins/history-search-multi-word" do
+  repository "https://github.com/zdharma/history-search-multi-word"
+  reference "master"
+  action :checkout
+  not_if "test -d #{Dir.home}" \
+    '/.oh-my-zsh/custom/plugins/history-search-multi-word'
 end
