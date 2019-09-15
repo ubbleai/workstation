@@ -27,6 +27,10 @@ package 'neovim'
 
 nodejs_npm 'neovim'
 
+package 'universal-ctags/universal-ctags/universal-ctags' do
+  options '--HEAD'
+end
+
 bash 'install ruby neovim plugin' do
   code <<-EOH
   sudo gem install neovim

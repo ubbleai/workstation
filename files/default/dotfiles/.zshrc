@@ -108,8 +108,14 @@ alias vim=nvim
 alias c=docker-compose
 alias n=nvim
 
+# git alias
+# clean local branches
+function gclean() {
+  git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs git branch -D
+}
+
 # powerline9k
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(kubecontext dir rbenv vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator command_execution_time time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 

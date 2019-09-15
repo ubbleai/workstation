@@ -27,10 +27,12 @@ set tabstop=4
 
 set history=1000                            " remember 1000 items in vim command history
 
+set statusline+=%F                          " relative path in status bar
+
 filetype plugin indent on
 
-let g:python_host_prog="~/.pyenv/versions/neovim2/bin/python"
-let g:python3_host_prog="~/.pyenv/versions/neovim3/bin/python"
+let g:python_host_prog = expand("~/.pyenv/versions/neovim2/bin/python")
+let g:python3_host_prog = expand("~/.pyenv/versions/neovim3/bin/python")
 
 " plugins
 call plug#begin('~/.local/share/nvim/plugged')
@@ -43,12 +45,35 @@ Plug 'wincent/command-t', {
 Plug 'tpope/vim-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'junegunn/goyo.vim'
+Plug 'Yggdroot/indentLine'                      " nice ident line
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+
+" python
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'mgedmin/python-imports.vim'
+
+Plug 'w0rp/ale'                                 " multilanguage syntax checker
 
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 Plug 'ambv/black'
+
+" snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+" ctags
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 " end plugins
+
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" enable deoplete
+let g:deoplete#enable_at_startup = 1
 
 " folding
 set foldmethod=indent
@@ -58,6 +83,10 @@ set foldlevel=99
 set mouse=a                                 " Automatically enable mouse usage
 set mousehide                               " Hide the mouse cursor while typing
 
+" nice preview for substitute
+set inccommand=split
+" search & replace globally by default
+set gdefault
 " nerdtree
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -77,7 +106,15 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 " move between tabs
+nnoremap <silent> ˚ :wincmd k<CR>
+nnoremap <silent> ∆ :wincmd j<CR>
+nnoremap <silent> ˙ :wincmd h<CR>
+nnoremap <silent> ¬ :wincmd l<CR>
 nnoremap <silent> È :wincmd k<CR>
 nnoremap <silent> Ï :wincmd j<CR>
 nnoremap <silent> Ì :wincmd h<CR>
 nnoremap <silent> ¬ :wincmd l<CR>
+
+" nice syntax
+syntax on
+syntax enable
