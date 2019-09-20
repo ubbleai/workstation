@@ -15,3 +15,4 @@ package 'derailed/k9s/k9s'
 homebrew_tap 'derailed/k9s' do
   action :untap
 end
+package 'operator-sdk'

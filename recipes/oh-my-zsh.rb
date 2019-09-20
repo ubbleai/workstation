@@ -31,6 +31,7 @@ end
 
 package 'direnv'
 package 'autojump'
+package 'diff-so-fancy'
 
 git "/Users/#{user_id}/.oh-my-zsh/custom/plugins/zsh-completions" do
   repository 'https://github.com/zsh-users/zsh-completions'

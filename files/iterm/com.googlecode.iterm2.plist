@@ -356,6 +356,8 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>50F3999B-3C42-484C-AD9C-0F3EF0D126A4</string>
+	<key>FocusFollowsMouse</key>
+	<true/>
 	<key>HapticFeedbackForEsc</key>
 	<false/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -407,6 +409,8 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>530 476 620 392 0 0 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>191 124 570 452 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1156,15 +1160,19 @@
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>890730F0-4B01-4DFC-A68A-27DE7E7A141F</string>
+	<key>NoSyncLastTipTime</key>
+	<real>590268878.16756594</real>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>3</integer>
+	<integer>5</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>589819508.14084899</real>
+	<real>590178590.73595905</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
+	<true/>
+	<key>NoSyncPermissionToShowTip</key>
 	<true/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
@@ -1874,11 +1882,18 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>ACTIVATE_BUDGET</string>
 		<string>ruby</string>
 		<string>exit</string>
 	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>589646708.14069605</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+	</array>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1914,6 +1929,8 @@
 	</dict>
 	<key>PrefsCustomFolder</key>
 	<string>/Users/michaeljourno/.dotfiles/files/iterm</string>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -1923,7 +1940,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-09-08T15:07:50Z</date>
+	<date>2019-09-15T22:50:44Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SoundForEsc</key>

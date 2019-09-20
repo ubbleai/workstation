@@ -50,7 +50,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 " python
 Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'mgedmin/python-imports.vim'
+Plug 'davidhalter/jedi-vim'
+" Plug 'mgedmin/python-imports.vim'
 
 Plug 'w0rp/ale'                                 " multilanguage syntax checker
 
@@ -63,7 +64,7 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " ctags
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 " end plugins
 

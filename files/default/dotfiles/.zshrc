@@ -116,7 +116,7 @@ function gclean() {
 
 # powerline9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(kubecontext dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator command_execution_time time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator command_execution_time pyenv battery time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # ruby
